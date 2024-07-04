@@ -1,0 +1,26 @@
+<!-- This file contains parameters for MMM, Vinci's registration plugin, -->
+<!-- a reference of the XML commands can be found in Vinci/doc. -->
+<!--$$Header: /Vinci_External_C/bin/mmm_remote.xml 3     4.03.05 15:14 Stefan $-->
+
+<MMM version="1.8">
+    <Job label="generic multi-modality" type="matching">
+        <Log console="1" file="0"/>
+        <ReferenceImage label="image"/>
+        <ResliceImage label="image"/>
+        <OutputImage createOutputFile="0" prefix="mmm_" label="" suffix="">
+            <Resampling dim="reslice" interpolation="trilinear" outsideVoxelVal="0"/>
+        </OutputImage>
+        <Matching useResultAsInit="0" editPreprocessing="1" estimateType="fromMagic" swapWhenRefLarger="1" usePreprocessing="0">
+            <RegSchema numberOfBins="64" histogramFactor="0.5" minVoxelNum="1" similarityMeasure="MutualInformation" name="multi-modality (generic)" miType="adaptive" minNumberOfBins="12" maxNumberOfBins="256" limits="1 1 1 200 200 200 2 2 2 0.5 0.5 0.5 10 " lengthScale="0.087 0.087 0.087 10 10 10 0.1 0.1 0.1 0.05 0.05 0.05 0.2 " minVoxelRatio="0.6" miForm="normalized">
+                <Level usedTransformations="1 1 1 1 1 1 0 0 0 0 0 0 0 " scaleFactors="4 4 1" name="rigid-body (4 4 1)" maxIterations="200" precision="0.0001"/>
+                <Level usedTransformations="1 1 1 1 1 1 0 0 0 0 0 0 0 " scaleFactors="2 2 1" name="rigid-body (2 2 1)" maxIterations="200" precision="1e-005"/>
+                <Level usedTransformations="1 1 1 1 1 1 0 0 0 0 0 0 0 " scaleFactors="1 1 1" name="rigid-body (1 1 1)" maxIterations="200" precision="1e-005"/>
+            </RegSchema>
+        </Matching>
+    </Job>
+</MMM>
+
+
+
+
+
